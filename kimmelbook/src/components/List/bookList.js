@@ -15,10 +15,10 @@ class bookList extends Component {
    
     async componentWillMount(){
         try {
-            const users = await api.getUsers();
+            //const users = await api.getUsers();
             const books = await api.getBooks();
-            this.setState({ books: books.data})
-            console.log(users.data)
+            this.setState({ books: books})
+            console.log(books)
         }catch(error){
             console.log(error)
         }
