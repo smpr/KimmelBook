@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
-import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../Styling/DefaultStyle"
+import { FormContainer, BodyContainer } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -69,7 +69,7 @@ class bookList extends Component {
                     return (
                         <FormContainer key={index} onClick={() => this.showBook(index)}>
                             <div>
-                                <img src={book.image} />
+                                <img src={book.image} alt={book.title}/>
                                 <center>{book.title}</center>
                                 <center>{avgRatingFun(book.reviews)}</center>
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, BookInfo, FormContainer, BodyContainer, Style, TextLabelStyle } from "../Styling/DefaultStyle"
+import { BookInfo, BodyContainer } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 class bookInfo extends Component {
@@ -9,7 +9,7 @@ class bookInfo extends Component {
             <BodyContainer>
                 <BookInfo>
                     <div>
-                        <center><img src={this.props.book.image} /></center>
+                        <center><img src={this.props.book.image} alt={this.props.book.title}/></center>
                     </div>
                     <div>
                         <center><b>Title:</b> {this.props.book.title}</center>
