@@ -8,13 +8,18 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {
-    var sum=0;
-    var len= rating.length;
-    for(i=0;i<len;i++){
-          //add them together
-        sum += rating[i];
+    if (rating.lenght > 0) {
+        var sum = 0;
+        var len = rating.length;
+        for (var i = 0; i < len; i++) {
+            //add them together
+            sum += rating[i];
+        }
+        return sum / len;
+    }else {
+        //reach goal of making this undefined and having the ui show "this book is not yet rated"
+       return 0;
     }
-    return sum / len;
 }
 
 
