@@ -7,6 +7,7 @@ class bookInfo extends Component {
             <div>
                 this is the book info page
                 {this.props.book.title}
+                <button onClick={this.props.toggleBookSwitch}>Back</button>
             </div>
         );
     }

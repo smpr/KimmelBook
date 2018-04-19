@@ -76,6 +76,7 @@ class bookList extends Component {
         const bookView = this.state.toggleBookView ?
             <BookInfo
                 book={this.state.activeBook}
+                toggleBookSwitch={this.toggleBookSwitch}
             /> :
             <BodyContainer>
 
