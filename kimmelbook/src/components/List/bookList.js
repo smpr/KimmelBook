@@ -6,7 +6,11 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 
-
+//insert rating calculator based on each review rating
+    //grab all of the review ratings
+    //add them together
+    //divide by review.rating.length
+    //save avgRating into its own const
 
 class bookList extends Component {
     state = {
@@ -14,7 +18,7 @@ class bookList extends Component {
         users: []
 
     }
-//insert rating calculator based on each review rating
+
     async componentWillMount() {
         try {
             //const users = await api.getUsers();
