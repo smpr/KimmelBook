@@ -11,14 +11,15 @@ const avgRatingFun = function (rating) {
     if (rating.lenght > 0) {
         var sum = 0;
         var len = rating.length;
+        console.log(len)
         for (var i = 0; i < len; i++) {
             //add them together
             sum += rating[i];
         }
         return sum / len;
-    }else {
+    } else {
         //reach goal of making this undefined and having the ui show "this book is not yet rated"
-       return 0;
+        return 0;
     }
 }
 
@@ -51,6 +52,7 @@ class bookList extends Component {
                         <div>
                             <img src={book.image} />
                             <center>{book.title}</center>
+                            <center>{avgRatingFun(book.reviews)}</center>
 
                         </div>
                     )
