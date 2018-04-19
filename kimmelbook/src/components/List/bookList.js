@@ -75,7 +75,7 @@ class bookList extends Component {
     render() {
         const bookView = this.state.toggleBookView ?
             <BookInfo
-                title={this.state.books.title}
+                book={this.state.activeBook}
             /> :
             <BodyContainer>
 
