@@ -18,7 +18,7 @@ const avgRatingFun = function (rating) {
      
             //console.log(sum)
         }
-        return sum / len;
+        return (sum / len).toFixed(2);
     } else {
         //reach goal of making this undefined and having the ui show "this book is not yet rated"
         return 0;
