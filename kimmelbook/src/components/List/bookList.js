@@ -19,6 +19,7 @@ class bookList extends Component {
             const books = await api.getBooks();
             this.setState({ books: books})
             console.log(books)
+            //console.log(users)
         }catch(error){
             console.log(error)
         }
@@ -31,7 +32,9 @@ book Titles
 {this.state.books.map((book, index)=>{
     return(
         <div>
+            <img src={book.image} />
             {book.title}
+           //insert rating from avg rating on the reviews
         </div>
     )
 })}
