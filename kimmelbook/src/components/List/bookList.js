@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+
 
 
 
@@ -10,7 +10,9 @@ class bookList extends Component {
     state={
         books:[],
         users: []
+        
     }
+   
     async componentWillMount(){
         try {
             const users = await api.getUsers();
