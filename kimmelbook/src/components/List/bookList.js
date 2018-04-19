@@ -5,19 +5,34 @@ import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import bookInfo from '../Info/bookInfo'
+import BookInfo from '../Info/bookInfo'
 
+
+//{this.state.books.map((book, index) => {
+
+//    return (
+//        <Link to="" key={index}
+//        >
+//            <div>
+//                <img src={book.image} />
+//                <center>{book.title}</center>
+//                <center>{avgRatingFun(book.reviews)}</center>
+
+//            </div>
+//        </Link>
+//    )
+//})}
 
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {
     if (rating.length > 0) {
         var sum = 0;
         var len = rating.length;
-        
+
         for (var i = 0; i < len; i++) {
             //add them together
             sum += rating[i].rating;
-     
+
             //console.log(sum)
         }
         return (sum / len).toFixed(2);
@@ -31,7 +46,9 @@ const avgRatingFun = function (rating) {
 class bookList extends Component {
     state = {
         books: [],
-        users: []
+        users: [],
+        activeBook: {},
+        toggleBookView: false
 
     }
 
@@ -46,24 +63,41 @@ class bookList extends Component {
             console.log(error)
         }
     }
-
+    //switching to bookview
+    toggleBookSwitch = () => {
+        this.setState({ toggleBookView: !this.state.toggleBookView })
+    }
+    showBook =(index) => {
+        this.toggleBookSwitch()
+        const book = this.state.books[index]
+        this.setState({ activeBook: book})
+    }
     render() {
-
-        return (
+        const bookView = this.state.toggleBookView ?
+            <BookInfo
+                title={this.state.books.title}
+            /> :
             <BodyContainer>
 
                 {this.state.books.map((book, index) => {
-                    return (
-                        <div key={index}>
-                            <img src={book.image} />
-                            <center>{book.title}</center>
-                            <center>{avgRatingFun(book.reviews)}</center>
 
-                        </div>
+                    return (
+                        <FormContainer key={index} onClick={() => this.showBook(index)}>
+                            <div>
+                                <img src={book.image} />
+                                <center>{book.title}</center>
+                                <center>{avgRatingFun(book.reviews)}</center>
+
+                            </div>
+                        </FormContainer>
                     )
                 })}
 
             </BodyContainer>
+        return (
+            <div>
+                {bookView}
+            </div>
         );
     }
 }
