@@ -8,13 +8,15 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {
-    if (rating.lenght > 0) {
+    if (rating.length > 0) {
         var sum = 0;
         var len = rating.length;
-        console.log(len)
+        
         for (var i = 0; i < len; i++) {
             //add them together
-            sum += rating[i];
+            sum += rating[i].rating;
+     
+            //console.log(sum)
         }
         return sum / len;
     } else {
