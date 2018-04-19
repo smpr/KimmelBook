@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
-import { FormContainer, BodyContainer } from "../Styling/DefaultStyle"
+import { FormContainer, BodyContainer, Container } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -51,10 +51,10 @@ class bookList extends Component {
     toggleBookSwitch = () => {
         this.setState({ toggleBookView: !this.state.toggleBookView })
     }
-    showBook =(index) => {
+    showBook = (index) => {
         this.toggleBookSwitch()
         const book = this.state.books[index]
-        this.setState({ activeBook: book})
+        this.setState({ activeBook: book })
     }
     render() {
         const bookView = this.state.toggleBookView ?
@@ -63,20 +63,23 @@ class bookList extends Component {
                 toggleBookSwitch={this.toggleBookSwitch}
             /> :
             <BodyContainer>
+                <Container>
+                    <RaisedButton label="Add A Book" />
 
-                {this.state.books.map((book, index) => {
+                    {this.state.books.map((book, index) => {
 
-                    return (
-                        <FormContainer key={index} onClick={() => this.showBook(index)}>
-                            <div>
-                                <img src={book.image} alt={book.title}/>
-                                <center>{book.title}</center>
-                                <center>{avgRatingFun(book.reviews)}</center>
+                        return (
+                            <FormContainer key={index} onClick={() => this.showBook(index)}>
+                                <div>
+                                    <img src={book.image} alt={book.title} />
+                                    <center>{book.title}</center>
+                                    <center>{avgRatingFun(book.reviews)}</center>
 
-                            </div>
-                        </FormContainer>
-                    )
-                })}
+                                </div>
+                            </FormContainer>
+                        )
+                    })}
+                </Container>
 
             </BodyContainer>
         return (
