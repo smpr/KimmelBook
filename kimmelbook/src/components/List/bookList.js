@@ -1,27 +1,11 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
-import { Link } from 'react-router-dom'
 import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import BookInfo from '../Info/bookInfo'
 
-
-//{this.state.books.map((book, index) => {
-
-//    return (
-//        <Link to="" key={index}
-//        >
-//            <div>
-//                <img src={book.image} />
-//                <center>{book.title}</center>
-//                <center>{avgRatingFun(book.reviews)}</center>
-
-//            </div>
-//        </Link>
-//    )
-//})}
 
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {

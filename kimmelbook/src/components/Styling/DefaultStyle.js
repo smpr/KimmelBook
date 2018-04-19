@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
+const BookInfo = styled.div`
+display:flex;
+justify-content: space-around;
+flex-direction: column;
+`
 const BodyContainer = styled.div`
 display:flex;
 justify-content: space-around;
@@ -102,6 +106,6 @@ const TextLabelStyle = {
 //   },
 };
 export {
-  Style, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
+  Style, BookInfo, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }
