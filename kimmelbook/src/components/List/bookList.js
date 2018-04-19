@@ -7,10 +7,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 
 //insert rating calculator based on each review rating
-    //grab all of the review ratings
-    //add them together
-    //divide by review.rating.length
-    //save avgRating into its own const
+const avgRatingFun = function (rating) {
+    var sum=0;
+    var len= rating.length;
+    for(i=0;i<len;i++){
+          //add them together
+        sum += rating[i];
+    }
+    return sum / len;
+}
+
 
 class bookList extends Component {
     state = {
@@ -34,17 +40,17 @@ class bookList extends Component {
     render() {
         return (
             <BodyContainer>
-                
-{this.state.books.map((book, index) => {
+
+                {this.state.books.map((book, index) => {
                     return (
                         <div>
                             <img src={book.image} />
                             <center>{book.title}</center>
-                        
+
                         </div>
                     )
                 })}
-                
+
             </BodyContainer>
         );
     }
