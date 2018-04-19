@@ -5,6 +5,8 @@ import { Container, FormContainer, BodyContainer, Style, TextLabelStyle } from "
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import bookInfo from '../Info/bookInfo'
+
 
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {
@@ -46,12 +48,13 @@ class bookList extends Component {
     }
 
     render() {
+
         return (
             <BodyContainer>
 
                 {this.state.books.map((book, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <img src={book.image} />
                             <center>{book.title}</center>
                             <center>{avgRatingFun(book.reviews)}</center>
