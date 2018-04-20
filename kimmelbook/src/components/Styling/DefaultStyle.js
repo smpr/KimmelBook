@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import MediaQuery from 'react-responsive';
+
 const ReviewBox = styled.div`
 display:flex;
 flex-direction: row;
