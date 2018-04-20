@@ -19,7 +19,7 @@ const isCheckedOut = function (challenge) {
         return challenge;
     } else {
         //return that it is available
-        challenge = "Available!"
+        challenge = <RaisedButton label="Check Out" />
         return challenge;
     }
 }

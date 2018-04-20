@@ -69,7 +69,11 @@ class bookList extends Component {
                             <FormContainer key={index} onClick={() => this.showBook(index)}>
                                 <div>
                                     <img src={book.image} alt={book.title} />
+                                </div>
+                                <div>
                                     <center>{book.title}</center>
+                                </div>
+                                <div>
                                     <center>{avgRatingFun(book.reviews)}</center>
                                 </div>
                             </FormContainer>
@@ -88,7 +92,11 @@ class bookList extends Component {
                             <FormContainer key={index} onClick={() => this.showBook(index)}>
                                 <div>
                                     <img src={book.image} alt={book.title} width="75"/>
+                                </div>
+                                <div>
                                     <center>{book.title}</center>
+                                </div>
+                                <div>
                                     <center>{avgRatingFun(book.reviews)}</center>
                                 </div>
                             </FormContainer>

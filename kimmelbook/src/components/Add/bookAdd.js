@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom'
 import api from 'books-mock-api'
-import { FormContainer, BodyContainer, Container, Style, TextLabelStyle, NavButton } from "../Styling/DefaultStyle"
+import { FormContainer, AddBook, TextLabelStyle, NavButton } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MediaQuery from 'react-responsive';
@@ -44,8 +44,8 @@ class bookAdd extends Component {
             return <Redirect to={`/`} />
         }
         return (
-            <BodyContainer>
-                <Container>
+            <AddBook>
+             
                     <FormContainer>
                         <div>
                             <TextField
@@ -109,8 +109,8 @@ class bookAdd extends Component {
                                 </div>
                         </NavButton>
                     </FormContainer>
-                </Container>
-            </BodyContainer>
+                
+            </AddBook>
         );
     }
 }
