@@ -45,8 +45,6 @@ background-color: White;
 justify-content: space-around;
 align-content: center;
 width: 25vw;
-
-
 padding: 20px;
 text-align: center;
 box-shadow: 3px 3px 3px #191919;
