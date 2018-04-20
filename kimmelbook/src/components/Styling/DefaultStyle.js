@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+const ReviewBox = styled.div`
 
+`
+const SingleReview = styled.div`
+`
 const BookInfo = styled.div`
 display:flex;
 justify-content: space-around;
@@ -106,6 +110,6 @@ const TextLabelStyle = {
 //   },
 };
 export {
-  Style, BookInfo, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
+  Style, ReviewBox, SingleReview, BookInfo, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
 
 }

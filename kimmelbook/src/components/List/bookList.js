@@ -12,11 +12,9 @@ const avgRatingFun = function (rating) {
     if (rating.length > 0) {
         var sum = 0;
         var len = rating.length;
-
         for (var i = 0; i < len; i++) {
             //add them together
             sum += rating[i].rating;
-
             //console.log(sum)
         }
         return (sum / len).toFixed(2);
@@ -25,17 +23,13 @@ const avgRatingFun = function (rating) {
         return 0;
     }
 }
-
-
 class bookList extends Component {
     state = {
         books: [],
         users: [],
         activeBook: {},
         toggleBookView: false
-
     }
-
     async componentWillMount() {
         try {
             //const users = await api.getUsers();
@@ -65,22 +59,18 @@ class bookList extends Component {
             <BodyContainer>
                 <Container>
                     <RaisedButton label="Add A Book" />
-
                     {this.state.books.map((book, index) => {
-
                         return (
                             <FormContainer key={index} onClick={() => this.showBook(index)}>
                                 <div>
                                     <img src={book.image} alt={book.title} />
                                     <center>{book.title}</center>
                                     <center>{avgRatingFun(book.reviews)}</center>
-
                                 </div>
                             </FormContainer>
                         )
                     })}
                 </Container>
-
             </BodyContainer>
         return (
             <div>
