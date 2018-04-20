@@ -31,19 +31,20 @@ class bookInfo extends Component {
         }
 
     }
+    //Checks to see if book.checked_out is null. if it is it makes a button visible to check it out
     isCheckedOut = function (challenge) {
         if (challenge != null) {
             challenge = "Checked Out!"
             return challenge;
         } else {
             //return that it is available
-            challenge = <RaisedButton label="Check Out" onClick={this.handleSubmit}/>
+            challenge = <RaisedButton label="Check Out" />
             return challenge;
         }
     }
-    handleSubmit =async (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        const updateCheckout= await api.updateBook(this.state.book)
+        await api.updateBook(this.state.book)
     }
     
     render() {
