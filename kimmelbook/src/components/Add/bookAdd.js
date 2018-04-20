@@ -7,6 +7,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const changeIdCase = (title) => {
     title = title.replace(/\s/g, '');
+    const id = this.state.book.id
+    this.setState({id: title})
     return 
 }
 class bookAdd extends Component {
@@ -26,8 +28,8 @@ class bookAdd extends Component {
     
     handleSubmit = async (event) => {
         event.preventDefault();
-       // const idTitle = this.changeIdCase(this.state.book)
-       // console.log(idTitle)
+        const idTitle = this.changeIdCase(this.state.book.title)
+        console.log(idTitle)
         const newBook = await api.createBook(this.state.book);
         this.setState({redirectToBookList: true}) 
     }
