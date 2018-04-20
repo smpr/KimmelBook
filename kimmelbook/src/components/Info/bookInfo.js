@@ -23,11 +23,11 @@ const isCheckedOut = function (challenge) {
     }
 }
 class bookInfo extends Component {
-    handleChallenge = () => {
-        const checkedOut = isCheckedOut(this.props.book.checked_out)
-        console.log(checkedOut)
-        return
-    }
+//    handleChallenge = () => {
+//        const checkedOut = isCheckedOut()
+//        console.log(checkedOut)
+//        return
+//    }
     render() {
         return (
             <BodyContainer>
@@ -48,7 +48,7 @@ class bookInfo extends Component {
                         <center>{this.props.book.description}</center>
                     </div>
                     <div>
-                        <center><b>Availabilty: {this.handleChallenge} </b>{}</center>
+                        <center><b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>{console.log(this.props.book.checked_out)}</center>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
