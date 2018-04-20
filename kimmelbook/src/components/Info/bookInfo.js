@@ -5,29 +5,24 @@ import RaisedButton from 'material-ui/RaisedButton';
 //reach for changing user names to print easier
 const makeItPretty = function (name) {
     if (name != null) {
-        name = name.replace('', /_/)
+        name = name.replace(/_/, ' ')
+        return name
     } else {
         name = "Anonymous";
-        return;
+        return name;
     }
 }
 const isCheckedOut = function (challenge) {
     if (challenge != null) {
         challenge = "Checked Out!"
-        console.log("test checked out")
-        return;
+        return challenge;
     } else {
         //return that it is available
         challenge = "Available!"
-        return;
+        return challenge;
     }
 }
 class bookInfo extends Component {
-//    handleChallenge = () => {
-//        const checkedOut = isCheckedOut()
-//        console.log(checkedOut)
-//        return
-//    }
     render() {
         return (
             <BodyContainer>
@@ -48,14 +43,14 @@ class bookInfo extends Component {
                         <center>{this.props.book.description}</center>
                     </div>
                     <div>
-                        <center><b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>{console.log(this.props.book.checked_out)}</center>
+                        <center><b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b></center>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
                             return (
                                 <SingleReview key={index}>
                                     <b>Stars: </b>{review.rating}<br />
-                                    <b>Reviewer: </b>{review.user}
+                                    <b>Reviewer: </b>{makeItPretty(review.user)}
                                 </SingleReview>
                             )
                         })}
