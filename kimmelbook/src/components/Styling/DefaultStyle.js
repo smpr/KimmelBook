@@ -7,6 +7,7 @@ display:flex;
 flex-direction: row;
 justify-content: center;
 padding: 10px;
+flex-wrap: wrap;
 `
 const SingleReview = styled.div`
 padding: 20px;
