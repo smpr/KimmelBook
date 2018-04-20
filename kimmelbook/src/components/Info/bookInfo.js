@@ -3,22 +3,31 @@ import { BookInfo, BodyContainer, ReviewBox, SingleReview } from "../Styling/Def
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 //reach for changing user names to print easier
-const makeItPretty = function(name){
-    if(name != null){
-    name= name.replace('', /_/)
-    }else {
+const makeItPretty = function (name) {
+    if (name != null) {
+        name = name.replace('', /_/)
+    } else {
         name = "Anonymous";
         return;
     }
 }
-const isCheckedOut = function(challenge){
-    if(challenge != null){
-        //return that it is checked out
-    }else {
+const isCheckedOut = function (challenge) {
+    if (challenge != null) {
+        challenge = "Checked Out!"
+        console.log("test checked out")
+        return;
+    } else {
         //return that it is available
+        challenge = "Available!"
+        return;
     }
 }
 class bookInfo extends Component {
+    handleChallenge = () => {
+        const checkedOut = isCheckedOut(this.props.book.checked_out)
+        console.log(checkedOut)
+        return
+    }
     render() {
         return (
             <BodyContainer>
@@ -38,6 +47,9 @@ class bookInfo extends Component {
                     <div>
                         <center>{this.props.book.description}</center>
                     </div>
+                    <div>
+                        <center><b>Availabilty: {this.handleChallenge} </b>{}</center>
+                    </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
                             return (
@@ -49,12 +61,12 @@ class bookInfo extends Component {
                         })}
                     </ReviewBox>
                     <div>
-                            <center><RaisedButton onClick={this.props.toggleBookSwitch} label="Back" /></center>
-                        </div>
+                        <center><RaisedButton onClick={this.props.toggleBookSwitch} label="Back" /></center>
+                    </div>
                 </BookInfo>
             </BodyContainer>
-                );
-            }
-        }
-        
+        );
+    }
+}
+
 export default bookInfo;
