@@ -5,18 +5,29 @@ import { FormContainer, BodyContainer, Container, Style, TextLabelStyle } from "
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+const changeIdCase = (title) => {
+    title = title.replace(/\s/g, '');
+    return 
+}
 class bookAdd extends Component {
     state = {
         book: {
             title: "",
             author: "",
             description: "",
-            img: ""
+            image: "",
+            reviews: [],
+            checked_out: "",
+            id: "testPage"
+
         },
         redirectToBookList: false
     }
+    
     handleSubmit = async (event) => {
         event.preventDefault();
+       // const idTitle = this.changeIdCase(this.state.book)
+       // console.log(idTitle)
         const newBook = await api.createBook(this.state.book);
         this.setState({redirectToBookList: true}) 
     }
@@ -28,6 +39,7 @@ class bookAdd extends Component {
         this.setState({ book: updateBook })
     }
     render() {
+        
         if (this.state.redirectToBookList) {
             return <Redirect to={`/`} />
         }
@@ -69,10 +81,10 @@ class bookAdd extends Component {
                                 floatingLabelStyle={TextLabelStyle.floatingLabelStyle}
                                 floatingLabelFocusStyle={TextLabelStyle.floatingLabelFocusStyle}
                                 onChange={this.handleChange}
-                                name="img"
+                                name="image"
                                 type="text"
 
-                                value={this.state.book.img}
+                                value={this.state.book.image}
                             />
                         </div>
                         <div>
