@@ -4,7 +4,7 @@ import api from 'books-mock-api'
 import { FormContainer, BodyContainer, Container, Style, TextLabelStyle, NavButton } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import MediaQuery from 'react-responsive';
 const changeIdCase = function(title)  {
     title = title.replace(/\s/g, '');
     return 
