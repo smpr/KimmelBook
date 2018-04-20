@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
-import { FormContainer, BodyContainer, Container } from "../Styling/DefaultStyle"
+import { Link } from 'react-router-dom'
+import { FormContainer, BodyContainer, Container, NavButton } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -57,8 +58,11 @@ class bookList extends Component {
                 toggleBookSwitch={this.toggleBookSwitch}
             /> :
             <BodyContainer>
-                <Container>
-                    <RaisedButton label="Add A Book" />
+                
+                    <NavButton>
+                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
                     {this.state.books.map((book, index) => {
                         return (
                             <FormContainer key={index} onClick={() => this.showBook(index)}>
@@ -70,6 +74,7 @@ class bookList extends Component {
                             </FormContainer>
                         )
                     })}
+                    
                 </Container>
             </BodyContainer>
         return (

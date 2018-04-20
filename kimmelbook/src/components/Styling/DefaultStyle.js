@@ -1,27 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
 const ReviewBox = styled.div`
-
+display:flex;
+flex-direction: row;
+justify-content: center;
+padding: 10px;
 `
 const SingleReview = styled.div`
+padding: 20px;
+text-align: center;
+box-shadow: 3px 3px 3px #191919;
 `
 const BookInfo = styled.div`
 display:flex;
 justify-content: space-around;
 flex-direction: column;
+text-align: center;
+padding: 40px;
 `
 const BodyContainer = styled.div`
-display:flex;
-justify-content: space-around;
-background-color: #918F8F;
-height: 100vh;
+justify-content: center;
+
 `
 const Container = styled.div`
-display: flex;
+display:flex;
+justify-content: center;
+flex-wrap: wrap;
 
-flex-direction: row;
-justify-content: space-around;
-align-content: center;
+div {
+    margin: 20px;
+}
+
+`
+const NavButton = styled.div`
+
+
 `
 const FormContainer = styled.div`
 display: flex;
@@ -59,35 +72,15 @@ const Button = styled.button`
 
 `
 const ImgContainer = styled.div`
-img {
-width: 25vw;
-}
+
 `
-const LinkDiv = styled.div`
-display:flex;
-justify-content: space-between;
-`
-const NavContainer = styled.div`
-display:flex;
-align-items: center;
-justify-content: space-around;
 
 
-height: 5vh;
-
-box-shadow: 10px 10px 5px #888888;
-`
 const InnerForm = styled.div`
 display: flex;
 justify-content: space-around;
 `
-const ListDiv = styled.div`
-display:flex;
-align-items: center;
-justify-content: center;
-align-content: center;
-flex-direction: column;
-`
+
 const Style = {
   // width: '10%',
 //   height: '95%',
@@ -110,6 +103,6 @@ const TextLabelStyle = {
 //   },
 };
 export {
-  Style, ReviewBox, SingleReview, BookInfo, TextLabelStyle, NavContainer, ListDiv, InnerForm, FormContainer, LinkDiv, Container, BodyContainer, Button, ImgContainer
+  Style, ReviewBox, SingleReview, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button, ImgContainer
 
 }

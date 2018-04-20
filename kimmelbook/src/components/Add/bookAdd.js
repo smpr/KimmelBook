@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import api from 'books-mock-api'
-import { FormContainer, BodyContainer, Container, Style, TextLabelStyle } from "../Styling/DefaultStyle"
+import { FormContainer, BodyContainer, Container, Style, TextLabelStyle, NavButton } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -100,9 +100,14 @@ class bookAdd extends Component {
                                 value={this.state.book.description}
                             />
                         </div>
-                        <div>
-                            <RaisedButton onClick={this.handleSubmit} label="Submit" style={Style} />
-                        </div>
+                        <NavButton>
+                            <div>
+                            <Link to={`/`}><RaisedButton label="Cancel" /></Link>
+                                </div>
+                                <div>
+                                    <RaisedButton onClick={this.handleSubmit} label="Submit" />
+                                </div>
+                        </NavButton>
                     </FormContainer>
                 </Container>
             </BodyContainer>

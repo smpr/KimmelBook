@@ -31,19 +31,19 @@ class bookInfo extends Component {
                         <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
                     </div>
                     <div>
-                        <center><b>Title:</b> {this.props.book.title}</center>
+                        <b>Title:</b> {this.props.book.title}
                     </div>
                     <div>
-                        <center><b>Author:</b> {this.props.book.author}</center>
+                        <b>Author:</b> {this.props.book.author}
                     </div>
                     <div>
-                        <center>{this.props.book.rating}</center>
+                        {this.props.book.rating}
                     </div>
                     <div>
-                        <center>{this.props.book.description}</center>
+                        <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <center><b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b></center>
+                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
