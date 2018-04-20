@@ -13,17 +13,32 @@ const makeItPretty = function (name) {
         return name;
     }
 }
-const isCheckedOut = function (challenge) {
-    if (challenge != null) {
-        challenge = "Checked Out!"
-        return challenge;
-    } else {
-        //return that it is available
-        challenge = <RaisedButton label="Check Out" />
-        return challenge;
-    }
+const checkOut = function () {
+
 }
+
 class bookInfo extends Component {
+    state= {
+        book:{
+            id: this.props.book.id,
+            checked_out: this.props.book.checked_out
+        }
+
+    }
+    isCheckedOut = function (challenge) {
+        if (challenge != null) {
+            challenge = "Checked Out!"
+            return challenge;
+        } else {
+            //return that it is available
+            challenge = <RaisedButton label="Check Out" onClick={this.handleSubmit}/>
+            return challenge;
+        }
+    }
+    handleSubmit =async (event) => {
+        console.log(this.state.book.id)
+    }
+    
     render() {
         return (
             <BodyContainer>
@@ -46,7 +61,7 @@ class bookInfo extends Component {
                         <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
+                        <b>Availabilty: {this.isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
@@ -83,7 +98,7 @@ class bookInfo extends Component {
                         <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
+                        <b>Availabilty: {this.isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
@@ -120,7 +135,7 @@ class bookInfo extends Component {
                         <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
+                        <b>Availabilty: {this.isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
@@ -157,7 +172,7 @@ class bookInfo extends Component {
                         <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
+                        <b>Availabilty: {this.isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
@@ -194,7 +209,7 @@ class bookInfo extends Component {
                         <b>Description: </b>{this.props.book.description}
                     </div>
                     <div>
-                        <b>Availabilty: {isCheckedOut(this.props.book.checked_out)} </b>
+                        <b>Availabilty: {this.isCheckedOut(this.props.book.checked_out)} </b>
                     </div>
                     <ReviewBox>
                         {this.props.book.reviews.map((review, index) => {
