@@ -5,10 +5,8 @@ import { FormContainer, BodyContainer, Container, Style, TextLabelStyle } from "
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const changeIdCase = (title) => {
+const changeIdCase = function(title)  {
     title = title.replace(/\s/g, '');
-    const id = this.state.book.id
-    this.setState({id: title})
     return 
 }
 class bookAdd extends Component {
@@ -28,8 +26,8 @@ class bookAdd extends Component {
     
     handleSubmit = async (event) => {
         event.preventDefault();
-        const idTitle = this.changeIdCase(this.state.book.title)
-        console.log(idTitle)
+        const idTitle = changeIdCase(this.state.book.title)
+        this.setState({id: idTitle})
         const newBook = await api.createBook(this.state.book);
         this.setState({redirectToBookList: true}) 
     }
