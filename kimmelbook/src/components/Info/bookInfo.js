@@ -3,6 +3,7 @@ import { BookInfo, BodyContainer, ReviewBox, SingleReview } from "../Styling/Def
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MediaQuery from 'react-responsive';
+import api from 'books-mock-api'
 //reach for changing user names to print easier
 const makeItPretty = function (name) {
     if (name != null) {
@@ -20,8 +21,13 @@ const checkOut = function () {
 class bookInfo extends Component {
     state= {
         book:{
+            author: this.props.author,
+            image: this.props.image,
+            title: this.props.title,
+            reviews: this.props.reviews,
+            description: this.props.description,
             id: this.props.book.id,
-            checked_out: this.props.book.checked_out
+            checked_out: "checked_out"
         }
 
     }
@@ -36,7 +42,8 @@ class bookInfo extends Component {
         }
     }
     handleSubmit =async (event) => {
-        console.log(this.state.book.id)
+        event.preventDefault();
+        const updateCheckout= await api.updateBook(this.state.book)
     }
     
     render() {
