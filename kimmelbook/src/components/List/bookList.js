@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import api from 'books-mock-api'
 import { Link } from 'react-router-dom'
-import { FormContainer, BodyContainer, Container, NavButton } from "../Styling/DefaultStyle"
+import { FormContainer, BodyContainer, Container, BookContainer, NavButton } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MediaQuery from 'react-responsive';
-
 import BookInfo from '../Info/bookInfo'
-
-
 //insert rating calculator based on each review rating
 const avgRatingFun = function (rating) {
     if (rating.length > 0) {
@@ -60,107 +57,103 @@ class bookList extends Component {
             /> :
             <BodyContainer>
                 <MediaQuery minDeviceWidth={1224}>
-                <NavButton>
-                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
-                </NavButton>
-                <Container>
-                    {this.state.books.map((book, index) => {
-                        return (
-                            <FormContainer key={index} onClick={() => this.showBook(index)}>
-                                <div>
-                                    <img src={book.image} alt={book.title} />
-                                </div>
-                                <div>
-                                    <center>{book.title}</center>
-                                </div>
-                                <div>
-                                    <center>{avgRatingFun(book.reviews)}</center>
-                                </div>
-                            </FormContainer>
-                        )
-                    })}
-
-                </Container>
+                    <NavButton>
+                        <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
+                        {this.state.books.map((book, index) => {
+                            return (
+                                <BookContainer key={index} onClick={() => this.showBook(index)}>
+                                    <div>
+                                        <img src={book.image} alt={book.title} />
+                                    </div>
+                                    <div>
+                                        <center>{book.title}</center>
+                                    </div>
+                                    <div>
+                                        <center>{avgRatingFun(book.reviews)}</center>
+                                    </div>
+                                </BookContainer>
+                            )
+                        })}
+                    </Container>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={375}>
-                <NavButton>
-                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
-                </NavButton>
-                <Container>
-                    {this.state.books.map((book, index) => {
-                        return (
-                            <FormContainer key={index} onClick={() => this.showBook(index)}>
-                                <div>
-                                    <img src={book.image} alt={book.title} width="75"/>
-                                </div>
-                                <div>
-                                    <center>{book.title}</center>
-                                </div>
-                                <div>
-                                    <center>{avgRatingFun(book.reviews)}</center>
-                                </div>
-                            </FormContainer>
-                        )
-                    })}
-
-                </Container>
+                    <NavButton>
+                        <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
+                        {this.state.books.map((book, index) => {
+                            return (
+                                <FormContainer key={index} onClick={() => this.showBook(index)}>
+                                    <div>
+                                        <img src={book.image} alt={book.title} width="75" />
+                                    </div>
+                                    <div>
+                                        <center>{book.title}</center>
+                                    </div>
+                                    <div>
+                                        <center>{avgRatingFun(book.reviews)}</center>
+                                    </div>
+                                </FormContainer>
+                            )
+                        })}
+                    </Container>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={414} minDeviceWidth={376}>
-                <NavButton>
-                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
-                </NavButton>
-                <Container>
-                    {this.state.books.map((book, index) => {
-                        return (
-                            <FormContainer key={index} onClick={() => this.showBook(index)}>
-                                <div>
-                                    <img src={book.image} alt={book.title} width="90"/>
-                                    <center>{book.title}</center>
-                                    <center>{avgRatingFun(book.reviews)}</center>
-                                </div>
-                            </FormContainer>
-                        )
-                    })}
-
-                </Container>
+                    <NavButton>
+                        <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
+                        {this.state.books.map((book, index) => {
+                            return (
+                                <FormContainer key={index} onClick={() => this.showBook(index)}>
+                                    <div>
+                                        <img src={book.image} alt={book.title} width="90" />
+                                        <center>{book.title}</center>
+                                        <center>{avgRatingFun(book.reviews)}</center>
+                                    </div>
+                                </FormContainer>
+                            )
+                        })}
+                    </Container>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={768} minDeviceWidth={415}>
-                <NavButton>
-                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
-                </NavButton>
-                <Container>
-                    {this.state.books.map((book, index) => {
-                        return (
-                            <FormContainer key={index} onClick={() => this.showBook(index)}>
-                                <div>
-                                    <img src={book.image} alt={book.title} width="150"/>
-                                    <center>{book.title}</center>
-                                    <center>{avgRatingFun(book.reviews)}</center>
-                                </div>
-                            </FormContainer>
-                        )
-                    })}
-
-                </Container>
+                    <NavButton>
+                        <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
+                        {this.state.books.map((book, index) => {
+                            return (
+                                <FormContainer key={index} onClick={() => this.showBook(index)}>
+                                    <div>
+                                        <img src={book.image} alt={book.title} width="150" />
+                                        <center>{book.title}</center>
+                                        <center>{avgRatingFun(book.reviews)}</center>
+                                    </div>
+                                </FormContainer>
+                            )
+                        })}
+                    </Container>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={1024} minDeviceWidth={769}>
-                <NavButton>
-                    <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
-                </NavButton>
-                <Container>
-                    {this.state.books.map((book, index) => {
-                        return (
-                            <FormContainer key={index} onClick={() => this.showBook(index)}>
-                                <div>
-                                    <img src={book.image} alt={book.title} width="200"/>
-                                    <center>{book.title}</center>
-                                    <center>{avgRatingFun(book.reviews)}</center>
-                                </div>
-                            </FormContainer>
-                        )
-                    })}
+                    <NavButton>
+                        <center><Link to={`/Create`}><RaisedButton label="Add A Book" /></Link></center>
+                    </NavButton>
+                    <Container>
+                        {this.state.books.map((book, index) => {
+                            return (
+                                <FormContainer key={index} onClick={() => this.showBook(index)}>
+                                    <div>
+                                        <img src={book.image} alt={book.title} width="200" />
+                                        <center>{book.title}</center>
+                                        <center>{avgRatingFun(book.reviews)}</center>
+                                    </div>
+                                </FormContainer>
+                            )
+                        })}
 
-                </Container>
+                    </Container>
                 </MediaQuery>
             </BodyContainer>
         return (

@@ -15,9 +15,7 @@ const makeItPretty = function (name) {
     }
 }
 const checkOut = function () {
-
 }
-
 class bookInfo extends Component {
     state = {
         book: {
@@ -44,9 +42,8 @@ class bookInfo extends Component {
     }
     handleSubmit = async (event) => {
         event.preventDefault();
-        await api.updateBook(this.state.book)
+        await api.updateBook(this.state.book).then(console.log);
     }
-
     render() {
         const bodyRef =
             <div>

@@ -29,25 +29,32 @@ background-size: cover;
 justify-content: center;
 display: flex;
 align-content: center;
-
-
 `
 const BodyContainer = styled.div`
 justify-content: center;
 background: grey;
-
+`
+const BookContainer = styled.div`
+display: flex;
+flex-direction: column;
+background-color: White;
+justify-content: space-around;
+align-content: center;
+padding: 20px;
+text-align: center;
+box-shadow: 3px 3px 3px #191919;
 `
 const Container = styled.div`
 display:flex;
 justify-content: center;
 flex-wrap: wrap;
-
+flex-grow: 1
 div {
     margin: 20px;
-    flex-grow: 1;
+  
     flex-wrap: wrap;
+    flex-shrink: 0
 }
-
 `
 const NavButton = styled.div`
 display: flex;
@@ -62,35 +69,23 @@ align-content: center;
 padding: 20px;
 text-align: center;
 box-shadow: 3px 3px 3px #191919;
-button {
-
-}
 a {
-    
-    text-decoration: none;
+        text-decoration: none;
 }
-
 `
-
 const Button = styled.button`
 :hover {
     box-shadow: 0 7px 7px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 :focus {
     outline: none;
-   
     box-shadow: 0 0 0 0;
-   
-
-}
-
+   }
 `
-
 const InnerForm = styled.div`
 display: flex;
 justify-content: space-around;
 `
-
 const Style = {
   // width: '10%',
 //   height: '95%',
@@ -113,6 +108,6 @@ const TextLabelStyle = {
 //   },
 };
 export {
-  Style, ReviewBox, AddBook, SingleReview, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
+  Style, ReviewBox, AddBook, SingleReview, BookContainer, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
 
 }
