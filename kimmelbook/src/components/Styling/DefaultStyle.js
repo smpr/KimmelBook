@@ -32,6 +32,7 @@ background-size: cover;
 justify-content: center;
 display: flex;
 align-content: center;
+align-items: center;
 `
 const BodyContainer = styled.div`
 justify-content: center;
@@ -43,6 +44,9 @@ background: grey;
 justify-content: center;
 align-items: center;
 display: flex;
+img {
+    width: 75%;
+}
 `
 const BookContainer = styled.div`
 display: flex;
@@ -65,7 +69,6 @@ flex-wrap: wrap;
 flex-grow: 1
 div {
     margin: 20px;
-  
     flex-wrap: wrap;
     flex-shrink: 0
 }
@@ -101,27 +104,27 @@ display: flex;
 justify-content: space-around;
 `
 const Style = {
-  // width: '10%',
-//   height: '95%',
-//   margin: '10px',
-//   border: '.5px solid #37474F',
-//   backgroundColor: '#37474F'
+    // width: '10%',
+    //   height: '95%',
+    //   margin: '10px',
+    //   border: '.5px solid #37474F',
+    //   backgroundColor: '#37474F'
 };
 const TextLabelStyle = {
-//   errorStyle: {
-//     color: orange500,
-//   },
-//   underlineStyle: {
-//     borderColor: orange500,
-//   },
-//   floatingLabelStyle: {
-//     color: blueGrey100,
-//   },
-//   floatingLabelFocusStyle: {
-//     color: cyan500,
-//   },
+    //   errorStyle: {
+    //     color: orange500,
+    //   },
+    //   underlineStyle: {
+    //     borderColor: orange500,
+    //   },
+    //   floatingLabelStyle: {
+    //     color: blueGrey100,
+    //   },
+    //   floatingLabelFocusStyle: {
+    //     color: cyan500,
+    //   },
 };
 export {
-  Style, ReviewBox, InfoContainer, AddBook, SingleReview, BookContainer, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
+    Style, ReviewBox, InfoContainer, AddBook, SingleReview, BookContainer, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
 
 }

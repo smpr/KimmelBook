@@ -25,7 +25,7 @@ class bookInfo extends Component {
             reviews: this.props.reviews,
             description: this.props.description,
             id: this.props.book.id,
-            checked_out: "checked_out"
+            checked_out: "checked"
         }
 
     }

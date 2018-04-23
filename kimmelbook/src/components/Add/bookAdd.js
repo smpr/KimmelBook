@@ -19,11 +19,9 @@ class bookAdd extends Component {
             reviews: [],
             checked_out: "",
             id: "testPage"
-
         },
         redirectToBookList: false
     }
-
     handleSubmit = async (event) => {
         event.preventDefault();
         const idTitle = changeIdCase(this.state.book.title)
@@ -56,10 +54,8 @@ class bookAdd extends Component {
                             onChange={this.handleChange}
                             name="title"
                             type="text"
-
                             value={this.state.book.title}
                         />
-
                     </div>
                     <div>
                         <TextField
@@ -70,7 +66,6 @@ class bookAdd extends Component {
                             onChange={this.handleChange}
                             name="author"
                             type="text"
-
                             value={this.state.book.author}
                         />
                     </div>
@@ -83,7 +78,6 @@ class bookAdd extends Component {
                             onChange={this.handleChange}
                             name="image"
                             type="text"
-
                             value={this.state.book.image}
                         />
                     </div>
@@ -96,7 +90,6 @@ class bookAdd extends Component {
                             onChange={this.handleChange}
                             name="description"
                             type="text"
-
                             value={this.state.book.description}
                         />
                     </div>
@@ -109,10 +102,8 @@ class bookAdd extends Component {
                         </div>
                     </NavButton>
                 </FormContainer>
-
             </AddBook>
         );
     }
 }
-
 export default bookAdd;
