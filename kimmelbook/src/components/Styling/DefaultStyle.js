@@ -48,6 +48,7 @@ const BookContainer = styled.div`
 display: flex;
 flex-direction: column;
 background-color: White;
+width: 25%;
 justify-content: space-around;
 align-content: center;
 padding: 20px;
