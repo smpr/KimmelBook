@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BookInfo, BodyContainer, ReviewBox, SingleReview } from "../Styling/DefaultStyle"
+import { BookInfo, InfoContainer, ReviewBox, SingleReview } from "../Styling/DefaultStyle"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MediaQuery from 'react-responsive';
@@ -36,7 +36,7 @@ class bookInfo extends Component {
             return challenge;
         } else {
             //return that it is available
-            challenge = <RaisedButton label="Check Out" />
+            challenge = <RaisedButton label="Check Out" onClick={this.handleSubmit} />
             return challenge;
         }
     }
@@ -77,58 +77,48 @@ class bookInfo extends Component {
                 </div>
             </div>
         return (
-            <BodyContainer>
+            <InfoContainer>
                 <MediaQuery minDeviceWidth={1224}>
-                    <BodyContainer>
-                        <BookInfo>
-                            <div>
-                                <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
-                            </div>
-                            {bodyRef}
-                        </BookInfo>
-                    </BodyContainer>
+                    <BookInfo>
+                        <div>
+                            <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
+                        </div>
+                        {bodyRef}
+                    </BookInfo>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={375}>
-                    <BodyContainer width="100">
-                        <BookInfo>
-                            <div>
-                                <center><img src={this.props.book.image} alt={this.props.book.title} width="100" /></center>
-                            </div>
-                            {bodyRef}
-                        </BookInfo>
-                    </BodyContainer>
+                    <BookInfo>
+                        <div>
+                            <center><img src={this.props.book.image} alt={this.props.book.title} width="100" /></center>
+                        </div>
+                        {bodyRef}
+                    </BookInfo>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={414} minDeviceWidth={376}>
-                    <BodyContainer>
-                        <BookInfo>
-                            <div>
-                                <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
-                            </div>
-                            {bodyRef}
-                        </BookInfo>
-                    </BodyContainer>
+                    <BookInfo>
+                        <div>
+                            <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
+                        </div>
+                        {bodyRef}
+                    </BookInfo>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={768} minDeviceWidth={415}>
-                    <BodyContainer>
-                        <BookInfo>
-                            <div>
-                                <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
-                            </div>
-                            {bodyRef}
-                        </BookInfo>
-                    </BodyContainer>
+                    <BookInfo>
+                        <div>
+                            <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
+                        </div>
+                        {bodyRef}
+                    </BookInfo>
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={1024} minDeviceWidth={769}>
-                    <BodyContainer>
-                        <BookInfo>
-                            <div>
-                                <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
-                            </div>
-                            {bodyRef}
-                        </BookInfo>
-                    </BodyContainer>
+                    <BookInfo>
+                        <div>
+                            <center><img src={this.props.book.image} alt={this.props.book.title} /></center>
+                        </div>
+                        {bodyRef}
+                    </BookInfo>
                 </MediaQuery>
-            </BodyContainer>
+            </InfoContainer>
 
         );
     }

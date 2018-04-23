@@ -18,10 +18,13 @@ margin: 5px;
 `
 const BookInfo = styled.div`
 display:flex;
-justify-content: space-around;
+width: 50%;
 flex-direction: column;
 text-align: center;
 padding: 40px;
+background: white;
+justify-content: center;
+align-items: center;
 `
 const AddBook = styled.div`
 background: grey;
@@ -33,6 +36,13 @@ align-content: center;
 const BodyContainer = styled.div`
 justify-content: center;
 background: grey;
+`
+const InfoContainer = styled.div`
+justify-content: center;
+background: grey;
+justify-content: center;
+align-items: center;
+display: flex;
 `
 const BookContainer = styled.div`
 display: flex;
@@ -108,6 +118,6 @@ const TextLabelStyle = {
 //   },
 };
 export {
-  Style, ReviewBox, AddBook, SingleReview, BookContainer, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
+  Style, ReviewBox, InfoContainer, AddBook, SingleReview, BookContainer, NavButton, BookInfo, TextLabelStyle, InnerForm, FormContainer, Container, BodyContainer, Button
 
 }
