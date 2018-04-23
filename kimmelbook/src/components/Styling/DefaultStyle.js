@@ -54,6 +54,9 @@ align-content: center;
 padding: 20px;
 text-align: center;
 box-shadow: 3px 3px 3px #191919;
+img {
+    width: 75%;
+}
 `
 const Container = styled.div`
 display:flex;
